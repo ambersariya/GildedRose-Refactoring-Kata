@@ -68,11 +68,11 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEquals(13, items[0].quality)
 
     def test_backstage_passes_drop_quality_to_0_after_sellin_date(self):
-        items = [Item("Backstage passes to a TAFKAL80ETC concert", sell_in=0, quality=10)]
+        items = [Item("Backstage passes to a TAFKAL80ETC concert", sell_in=-1, quality=10)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEquals("Backstage passes to a TAFKAL80ETC concert", items[0].name)
-        self.assertEquals(-1, items[0].sell_in)
+        self.assertEquals(-2, items[0].sell_in)
         self.assertEquals(0, items[0].quality)
 
 
