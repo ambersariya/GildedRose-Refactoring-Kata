@@ -22,17 +22,15 @@ export class GildedRose {
   }
 
   updateQuality() {
-    for (let i = 0; i < this.items.length; i++) {
-      const item = this.items[i];
+    this.items.forEach((item) => {
       this.updateItemQuality(item);
-    }
+    });
 
     return this.items;
   }
 
   private updateItemQuality(item: Item) {
-    if (item.name != AGED_BRIE &&
-      item.name != BACKSTAGE_PASSES) {
+    if (item.name != AGED_BRIE && item.name != BACKSTAGE_PASSES) {
       if (item.quality > 0) {
         if (item.name != SULFURAS) {
           item.quality = item.quality - 1;
@@ -67,8 +65,7 @@ export class GildedRose {
             }
           }
         } else {
-          item.quality =
-            item.quality - item.quality;
+          item.quality = item.quality - item.quality;
         }
       } else {
         if (item.quality < 50) {
