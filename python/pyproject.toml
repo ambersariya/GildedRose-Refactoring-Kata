@@ -7,6 +7,8 @@ authors = ["ambersariya <1080238+ambersariya@users.noreply.github.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 parameterized = "^0.8.1"
+coverage = "^6.4.2"
+pytest = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
 

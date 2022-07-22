@@ -12,6 +12,18 @@ class GildedRose(object):
         for item in self.items:
             self.update_item_quality(item)
 
+    def update_item_quality(self, item):
+        if item.name == SULFURAS:
+            return
+
+        if item.name == AGED_BRIE:
+            self.update_quality_aged_brie(item)
+
+        if item.name == BACKSTAGE_PASSES:
+            self.update_quality_backstage_passes(item)
+
+        self.decrease_item_sell_in(item)
+
     def update_quality_aged_brie(self, item):
         if item.quality < 50:
             self.increase_item_quality(item)
@@ -27,24 +39,12 @@ class GildedRose(object):
             item.quality = 0
 
     @staticmethod
-    def decrease_item_quality(item):
+    def decrease_item_sell_in(item):
         item.sell_in = item.sell_in - 1
 
     @staticmethod
     def increase_item_quality(item):
         item.quality = item.quality + 1
-
-    def update_item_quality(self, item):
-        if item.name == SULFURAS:
-            return
-
-        if item.name == AGED_BRIE:
-            self.update_quality_aged_brie(item)
-
-        if item.name == BACKSTAGE_PASSES:
-            self.update_quality_backstage_passes(item)
-
-        self.decrease_item_quality(item)
 
 
 class Item:
