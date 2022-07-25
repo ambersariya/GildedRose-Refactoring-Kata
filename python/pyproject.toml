@@ -13,6 +13,7 @@ parameterized = "^0.8.1"
 coverage = "^6.4.2"
 pylama = {extras = ["all"], version = "^8.3.8"}
 
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
