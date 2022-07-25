@@ -1,5 +1,7 @@
 MAX_QUALITY = 50
-
+SULFURAS = "Sulfuras, Hand of Ragnaros"
+AGED_BRIE = "Aged Brie"
+BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert"
 
 class Item:
     def __init__(self, name, sell_in, quality):
@@ -64,10 +66,10 @@ class BackstagePasses(Item):
 
 
 def CreateItem(name: str, sell_in: int, quality: int):
-    if name == "Sulfuras, Hand of Ragnaros":
+    if name == SULFURAS:
         return Sulfuras(name, sell_in, quality)
-    if name == "Aged Brie":
+    if name == AGED_BRIE:
         return AgedBrie(name, sell_in, quality)
-    if name == "Backstage passes to a TAFKAL80ETC concert":
+    if name == BACKSTAGE_PASSES:
         return BackstagePasses(name, sell_in, quality)
     return Item(name, sell_in, quality)
