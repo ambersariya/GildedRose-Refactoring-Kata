@@ -7,44 +7,44 @@ class Item:
     def __repr__(self):
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
 
-    def reduce_sell_in(self):
+    def _reduce_sell_in(self):
         self.sell_in -= 1
 
-    def increase_item_quality(self):
+    def _increase_item_quality(self):
         pass
 
-    def decrease_item_quality(self):
+    def _decrease_item_quality(self):
         if self.quality > 0:
             self.quality -= 1
 
     def tick(self):
-        self.reduce_sell_in()
-        self.increase_item_quality()
-        self.decrease_item_quality()
+        self._reduce_sell_in()
+        self._increase_item_quality()
+        self._decrease_item_quality()
 
 
 class Sulfuras(Item):
-    def reduce_sell_in(self):
+    def _reduce_sell_in(self):
         pass
 
-    def increase_item_quality(self):
+    def _increase_item_quality(self):
         pass
 
-    def decrease_item_quality(self):
+    def _decrease_item_quality(self):
         pass
 
 
 class AgedBrie(Item):
-    def increase_item_quality(self):
+    def _increase_item_quality(self):
         if self.quality < 50:
             self.quality += 1
 
-    def decrease_item_quality(self):
+    def _decrease_item_quality(self):
         pass
 
 
 class BackstagePasses(Item):
-    def increase_item_quality(self):
+    def _increase_item_quality(self):
         if self.quality < 50:
             self.quality += 1
         if self.sell_in < 11:
@@ -52,7 +52,7 @@ class BackstagePasses(Item):
         if self.sell_in < 6:
             self.quality += 1
 
-    def decrease_item_quality(self):
+    def _decrease_item_quality(self):
         if self.sell_in < 0:
             self.quality = 0
 
