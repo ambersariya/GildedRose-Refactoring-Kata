@@ -48,3 +48,36 @@ class Item:
 
     def __repr__(self):
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
+
+    def reduce_sell_in(self):
+        self.sell_in -= 1
+
+    def increase_item_quality(self):
+        self.quality += 1
+
+    def decrease_item_quality(self):
+        self.quality -= 1
+
+
+class Sulfuras(Item):
+    pass
+
+
+class AgedBrie(Item):
+    pass
+
+
+class BackstagePasses(Item):
+    pass
+
+
+class ItemFactory:
+    def create_item(name: str, sell_in: int, quality: int):
+        if name == "Sulfuras, Hand of Ragnaros":
+            return Sulfuras(name, sell_in, quality)
+        if name == "Aged Brie":
+            return AgedBrie(name, sell_in, quality)
+        if name == "Backstage passes to a TAFKAL80ETC concert":
+            return BackstagePasses(name, sell_in, quality)
+        else:
+            return Item(name, sell_in, quality)

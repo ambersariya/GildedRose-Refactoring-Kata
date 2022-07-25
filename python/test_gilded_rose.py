@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from gilded_rose import Item, GildedRose
+from gilded_rose import Item, GildedRose, ItemFactory
 from parameterized import parameterized
 
 
@@ -27,8 +27,7 @@ class GildedRoseTest(unittest.TestCase):
         ('Backstage passes to a TAFKAL80ETC concert', -2, 10, -3, 0),
     ])
     def test_item(self, item_name, sell_in, quality, expected_sell_in, expected_quality):
-        items = [Item(item_name, sell_in=sell_in, quality=quality)]
-
+        items = [ItemFactory.create_item(name=item_name, sell_in=sell_in, quality=quality)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
 
