@@ -30,6 +30,11 @@ class GildedRoseTest(unittest.TestCase):
         ('Backstage passes to a TAFKAL80ETC concert', 5, 10, 4, 13),
         ('Backstage passes to a TAFKAL80ETC concert', -1, 10, -2, 0),
         ('Backstage passes to a TAFKAL80ETC concert', -2, 10, -3, 0),
+        ('Conjured Mana Cake', 0, 0, -1, 0),
+        ('Conjured Mana Cake', 0, 51, -1, 50),
+        ('Conjured Mana Cake', 0, 1, -1, 0),
+        ('Conjured Mana Cake', -1, 1, -2, 0),
+        ('Conjured Mana Cake', -1, 0, -2, 0),
     ])
     def test_item(self, item_name, sell_in, quality, expected_sell_in, expected_quality):
         items = [CreateItem(name=item_name, sell_in=sell_in, quality=quality)]
