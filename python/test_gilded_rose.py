@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from gilded_rose import Item, GildedRose, ItemFactory
 from parameterized import parameterized
+
+from gilded_rose import GildedRose
+from items import ItemFactory
 
 
 class GildedRoseTest(unittest.TestCase):
