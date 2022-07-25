@@ -3,6 +3,7 @@ SULFURAS = "Sulfuras, Hand of Ragnaros"
 AGED_BRIE = "Aged Brie"
 BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert"
 
+
 class Item:
     def __init__(self, name, sell_in, quality):
         self.name = name

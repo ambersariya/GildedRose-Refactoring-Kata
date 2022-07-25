@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from parameterized import parameterized
+from parameterized import parameterized  # type: ignore
 
 from gilded_rose import GildedRose
 from items import CreateItem
