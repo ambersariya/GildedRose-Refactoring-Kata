@@ -50,12 +50,13 @@ class BackstagePasses(Item):
     def _increase_item_quality(self):
         if self.quality < MAX_QUALITY:
             self.quality += 1
+        if self.quality >= MAX_QUALITY:
+            return
 
-        if self.quality < MAX_QUALITY:
-            if self.sell_in < 11:
-                self.quality += 1
-            if self.sell_in < 6:
-                self.quality += 1
+        if self.sell_in < 11:
+            self.quality += 1
+        if self.sell_in < 6:
+            self.quality += 1
 
     def _decrease_item_quality(self):
         if self.sell_in < 0:

@@ -25,7 +25,7 @@ class GildedRoseTest(unittest.TestCase):
         ('Backstage passes to a TAFKAL80ETC concert', 15, 10, 14, 11),
         ('Backstage passes to a TAFKAL80ETC concert', 15, 20, 14, 21),
         ('Backstage passes to a TAFKAL80ETC concert', 10, 49, 9, 50),
-        ('Backstage passes to a TAFKAL80ETC concert', 10, 50, 9, 50),
+        ('Backstage passes to a TAFKAL80ETC concert', 9, 50, 8, 50),
         ('Backstage passes to a TAFKAL80ETC concert', 10, 10, 9, 12),
         ('Backstage passes to a TAFKAL80ETC concert', 5, 10, 4, 13),
         ('Backstage passes to a TAFKAL80ETC concert', -1, 10, -2, 0),
