@@ -1,3 +1,6 @@
+MAX_QUALITY = 50
+
+
 class Item:
     def __init__(self, name, sell_in, quality):
         self.name = name
@@ -36,7 +39,7 @@ class Sulfuras(Item):
 
 class AgedBrie(Item):
     def _increase_item_quality(self):
-        if self.quality < 50:
+        if self.quality < MAX_QUALITY:
             self.quality += 1
 
     def _decrease_item_quality(self):
@@ -45,25 +48,25 @@ class AgedBrie(Item):
 
 class BackstagePasses(Item):
     def _increase_item_quality(self):
-        if self.quality < 50:
+        if self.quality < MAX_QUALITY:
             self.quality += 1
-        if self.sell_in < 11:
-            self.quality += 1
-        if self.sell_in < 6:
-            self.quality += 1
+
+        if self.quality < MAX_QUALITY:
+            if self.sell_in < 11:
+                self.quality += 1
+            if self.sell_in < 6:
+                self.quality += 1
 
     def _decrease_item_quality(self):
         if self.sell_in < 0:
             self.quality = 0
 
 
-class ItemFactory:
-    def create_item(name: str, sell_in: int, quality: int):
-        if name == "Sulfuras, Hand of Ragnaros":
-            return Sulfuras(name, sell_in, quality)
-        if name == "Aged Brie":
-            return AgedBrie(name, sell_in, quality)
-        if name == "Backstage passes to a TAFKAL80ETC concert":
-            return BackstagePasses(name, sell_in, quality)
-        else:
-            return Item(name, sell_in, quality)
+def CreateItem(name: str, sell_in: int, quality: int):
+    if name == "Sulfuras, Hand of Ragnaros":
+        return Sulfuras(name, sell_in, quality)
+    if name == "Aged Brie":
+        return AgedBrie(name, sell_in, quality)
+    if name == "Backstage passes to a TAFKAL80ETC concert":
+        return BackstagePasses(name, sell_in, quality)
+    return Item(name, sell_in, quality)
