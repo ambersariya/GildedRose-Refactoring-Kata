@@ -66,7 +66,7 @@ class BackstagePasses(Item):
             self.quality = 0
 
 
-def CreateItem(name: str, sell_in: int, quality: int):
+def create_item(name: str, sell_in: int, quality: int):
     if name == SULFURAS:
         return Sulfuras(name, sell_in, quality)
     if name == AGED_BRIE:

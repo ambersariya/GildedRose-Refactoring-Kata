@@ -4,7 +4,7 @@ import unittest
 from parameterized import parameterized  # type: ignore
 
 from gilded_rose import GildedRose
-from items import CreateItem
+from items import create_item
 
 
 class GildedRoseTest(unittest.TestCase):
@@ -37,7 +37,7 @@ class GildedRoseTest(unittest.TestCase):
         ('Conjured Mana Cake', -1, 0, -2, 0),
     ])
     def test_item(self, item_name, sell_in, quality, expected_sell_in, expected_quality):
-        items = [CreateItem(name=item_name, sell_in=sell_in, quality=quality)]
+        items = [create_item(name=item_name, sell_in=sell_in, quality=quality)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
 
